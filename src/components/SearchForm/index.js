@@ -14,7 +14,7 @@ function SearchForm(props) {
         }
         return (
           <div class="input-group mb-3">
-          <select class="custom-select" id="inputGroupSelect01" onChange={props.handleInputChange} value={props.arrestType}>
+          <select class="custom-select" id="inputGroupSelect01" onChange={props.handleInputChange}>
             <option selected>Choose Arrest Type</option>
               {Object.keys(obj).map(ele => <option value={ele}>{ele.toLowerCase()}</option>)}
           </select>

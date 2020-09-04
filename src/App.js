@@ -62,9 +62,7 @@ class App extends Component {
                     results={this.state.results} 
                     handleInputChange={this.handleInputChange}
                     />
-                <ResultList 
-                // results={this.state.results}
-                 /> 
+                <ResultList results={this.state.results}/> 
             </div>
         )
     }
