@@ -23,14 +23,8 @@ function SearchForm(props) {
       }
 
     return (
-        <div className="container mt-4">
-        <div class="row">
-        <div class="col-md-4">
+        <div>
           {selector()}
-        </div>
-        <div class="col-md-8">
-        </div>
-        </div>
         </div>
     )
 }

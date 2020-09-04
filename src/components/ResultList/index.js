@@ -1,17 +1,7 @@
 import React from "react";
-import Map from "./Map";
 import { Pie } from "react-chartjs-2";
 
 function ResultList(props) {
-  console.log(props.results);
-
-  const lat =
-    props.results.reduce((t, r) => t + parseFloat(r.latitude), 0) /
-    props.results.length;
-
-  const lon =
-    props.results.reduce((t, r) => t + parseFloat(r.longitude), 0) /
-    props.results.length;
 
   var colorArray = [
     "#FF6633",
@@ -188,13 +178,7 @@ function ResultList(props) {
   };
 
   return (
-    <div className="container mt-4">
-    <div class="row">
-    <div class="col-md-8">
-    <Map lat={lat} lon={lon} pins={props.results}/>
-    </div>
-    </div>
-   
+    <div className="container mt-4"> 
       <div className="row mt-3">
         <div className="col-md-6">{arrestBoro()}</div>
         <div className="col-md-6">{ageGroup()}</div>
