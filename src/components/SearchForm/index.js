@@ -2,18 +2,36 @@ import React from 'react'
 import './style.css'
 
 function SearchForm(props) {
+
+    const selector = () => {
+        let obj = {};
+        for (let i = 0; i < props.results.length; i++) {
+          if (obj[props.results[i].ofns_desc] === undefined) {
+            obj[props.results[i].ofns_desc] = 1;
+          } else {
+            obj[props.results[i].ofns_desc] = obj[props.results[i].ofns_desc] + 1;
+          }
+        }
+        return (
+          <div class="input-group mb-3">
+          <select class="custom-select" id="inputGroupSelect01" onChange={props.handleInputChange} value={props.arrestType}>
+            <option selected>Choose Arrest Type</option>
+              {Object.keys(obj).map(ele => <option value={ele}>{ele.toLowerCase()}</option>)}
+          </select>
+        </div>
+        );
+      }
+
     return (
-      <form className="m-3">
-      <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="inputGroupSelect01">Arrest Type</label>
-      </div>
-      <select class="custom-select" id="inputGroupSelect01" onChange={props.handleInputChange} name="arrestType" value={props.arrestType}>
-        <option selected>Choose...</option>
-          {props.results.map(result => <option value={result.ofns_desc}>{result.ofns_desc}</option>)}
-      </select>
-    </div> 
-    </form>
+        <div className="container mt-4">
+        <div class="row">
+        <div class="col-md-4">
+          {selector()}
+        </div>
+        <div class="col-md-8">
+        </div>
+        </div>
+        </div>
     )
 }
 

@@ -50,6 +50,12 @@ class App extends Component {
     render() {
         return (
             <div>
+            <nav class="navbar navbar-light bg-dark">
+              <span class="navbar-brand mb-0 h1 text-white">
+                Visualization of every arrest effected in NYC by the NYPD during the
+                current year
+              </span>
+            </nav>
                 <SearchForm
                     arrestType={this.state.arrestType}
                     results={this.state.results} 
