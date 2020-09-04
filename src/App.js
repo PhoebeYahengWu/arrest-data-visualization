@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SearchForm from './components/SearchForm/index'
 import ResultList from './components/ResultList/index'
 import axios from 'axios';
+import './App.css';
 
 
 class App extends Component {
