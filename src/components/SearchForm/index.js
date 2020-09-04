@@ -1,32 +1,38 @@
-import React from 'react'
-import './style.css'
+import React from "react";
+import "./style.css";
 
 function SearchForm(props) {
+  const selector = () => {
+    let obj = {};
 
-    const selector = () => {
-        let obj = {};
-        for (let i = 0; i < props.results.length; i++) {
-          if (obj[props.results[i].ofns_desc] === undefined) {
-            obj[props.results[i].ofns_desc] = 1;
-          } else {
-            obj[props.results[i].ofns_desc] = obj[props.results[i].ofns_desc] + 1;
-          }
-        }
-        return (
-          <div class="input-group mb-3">
-          <select class="custom-select" id="inputGroupSelect01" onChange={props.handleInputChange}>
-            <option selected>Choose Arrest Type</option>
-              {Object.keys(obj).map(ele => <option value={ele}>{ele.toLowerCase()}</option>)}
-          </select>
-        </div>
-        );
+    if (props.results.length) {
+      for (let i = 0; i < props.results.length; i++) {
+        var key = props.results[i].ofns_desc;
+        if (key) obj[key] = true;
       }
+    }
+
+    console.log(obj);
 
     return (
-        <div>
-          {selector()}
-        </div>
-    )
+      <div className="input-group mb-3">
+        <select
+          className="custom-select"
+          id="inputGroupSelect01"
+          onChange={props.handleInputChange}
+        >
+          <option value="">Choose Arrest Type</option>
+          {Object.keys(obj).map((ele, i) => (
+            <option key={i + "-el"} value={ele}>
+              {ele}
+            </option>
+          ))}
+        </select>
+      </div>
+    );
+  };
+
+  return <div>{selector()}</div>;
 }
 
 export default SearchForm;

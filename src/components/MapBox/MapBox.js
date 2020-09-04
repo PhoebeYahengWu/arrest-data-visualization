@@ -12,9 +12,9 @@ function MapBox(props) {
 
   return (
     <>
-    <Map lat={lat} lon={lon} pins={props.results}/>
+      <Map lat={lat} lon={lon} pins={props.results} />
     </>
   );
 }
 
-export default MapBox; 
+export default MapBox;

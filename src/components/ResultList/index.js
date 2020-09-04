@@ -2,7 +2,7 @@ import React from "react";
 import { Pie } from "react-chartjs-2";
 
 function ResultList(props) {
-
+  console.log(props);
   var colorArray = [
     "#FF6633",
     "#FFB399",
@@ -56,112 +56,19 @@ function ResultList(props) {
     "#6666FF",
   ];
 
-  const ofnsDesc = () => {
-    let obj = {};
-    for (let i = 0; i < props.results.length; i++) {
-      if (obj[props.results[i].ofns_desc] === undefined) {
-        obj[props.results[i].ofns_desc] = 1;
-      } else {
-        obj[props.results[i].ofns_desc] = obj[props.results[i].ofns_desc] + 1;
-      }
-    }
-    return (
-      <Pie
-        data={{
-          labels: Object.keys(obj),
-          datasets: [
-            {
-              data: Object.values(obj),
-              backgroundColor: colorArray,
-            },
-          ],
-        }}
-      />
-    );
-  };
+  const PieChart = ({ type }) => {
+    const obj = {};
 
-  const arrestBoro = () => {
-    let obj = {};
-    for (let i = 0; i < props.results.length; i++) {
-      if (obj[props.results[i].arrest_boro] === undefined) {
-        obj[props.results[i].arrest_boro] = 1;
-      } else {
-        obj[props.results[i].arrest_boro] =
-          obj[props.results[i].arrest_boro] + 1;
-      }
-    }
-    return (
-      <Pie
-        data={{
-          labels: Object.keys(obj),
-          datasets: [
-            {
-              data: Object.values(obj),
-              backgroundColor: colorArray,
-            },
-          ],
-        }}
-      />
-    );
-  };
+    props.results.forEach((arrest) => {
+      const key = arrest[type];
+      if (key)
+        if (obj[key]) {
+          obj[key] += 1;
+        } else {
+          obj[key] = 1;
+        }
+    });
 
-  const ageGroup = () => {
-    let obj = {};
-    for (let i = 0; i < props.results.length; i++) {
-      if (obj[props.results[i].age_group] === undefined) {
-        obj[props.results[i].age_group] = 1;
-      } else {
-        obj[props.results[i].age_group] = obj[props.results[i].age_group] + 1;
-      }
-    }
-    return (
-      <Pie
-        data={{
-          labels: Object.keys(obj),
-          datasets: [
-            {
-              data: Object.values(obj),
-              backgroundColor: colorArray,
-            },
-          ],
-        }}
-      />
-    );
-  };
-
-  const perpSex = () => {
-    let obj = {};
-    for (let i = 0; i < props.results.length; i++) {
-      if (obj[props.results[i].perp_sex] === undefined) {
-        obj[props.results[i].perp_sex] = 1;
-      } else {
-        obj[props.results[i].perp_sex] = obj[props.results[i].perp_sex] + 1;
-      }
-    }
-    return (
-      <Pie
-        data={{
-          labels: Object.keys(obj),
-          datasets: [
-            {
-              data: Object.values(obj),
-              backgroundColor: colorArray,
-            },
-          ],
-        }}
-      />
-    );
-  };
-
-  const perpRace = () => {
-    let obj = {};
-    for (let i = 0; i < props.results.length; i++) {
-      if (obj[props.results[i].perp_race] === undefined) {
-        obj[props.results[i].perp_race] = 1;
-      } else {
-        obj[props.results[i].perp_race] = obj[props.results[i].perp_race] + 1;
-      }
-    }
     return (
       <Pie
         data={{
@@ -178,18 +85,21 @@ function ResultList(props) {
   };
 
   return (
-    <div className="container mt-4"> 
+    <div className="container mt-4 mb-4">
       <div className="row mt-3">
-        <div className="col-md-6">{arrestBoro()}</div>
-        <div className="col-md-6">{ageGroup()}</div>
+        <div className="col-md-6">
+          <PieChart type="arrest_boro" />
+        </div>
+        <div className="col-md-6">
+          <PieChart type="age_group" />
+        </div>
+        <div className="col-md-6">
+          <PieChart type="perp_sex" />
+        </div>
+        <div className="col-md-6">
+          <PieChart type="perp_race" />
+        </div>
       </div>
-
-      <div className="row mt-3">
-        <div className="col-md-6">{perpSex()}</div>
-        <div className="col-md-6">{perpRace()}</div>
-      </div>
-
-      <div className="row mt-3">{ofnsDesc()}</div>
     </div>
   );
 }

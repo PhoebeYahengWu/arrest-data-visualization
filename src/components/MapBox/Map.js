@@ -3,7 +3,13 @@ import L from "leaflet";
 
 export default (props) => {
   React.useEffect(() => {
+    const MAP_CONTAINER = document.getElementById("map-container");
+
     if (props.lat && props.lon && props.pins) {
+      const MAP_ID = document.createElement("div");
+      MAP_ID.setAttribute("id", "mapid");
+      MAP_CONTAINER.appendChild(MAP_ID);
+
       const mymap = L.map("mapid").setView([props.lat, props.lon], 10);
 
       L.tileLayer(
@@ -15,8 +21,7 @@ export default (props) => {
           id: "mapbox/streets-v11",
           tileSize: 512,
           zoomOffset: -1,
-          accessToken:
-            process.env.REACT_APP_MAP_API_KEY,
+          accessToken: process.env.REACT_APP_MAP_API_KEY,
         }
       ).addTo(mymap);
 
@@ -24,7 +29,9 @@ export default (props) => {
         L.marker([pin.latitude, pin.longitude]).addTo(mymap)
       );
     }
+
+    return () => (MAP_CONTAINER.innerHTML = "");
   }, [props.lat, props.lon, props.pins]);
 
-  return <div id="mapid"></div>;
+  return <div id="map-container"></div>;
 };
