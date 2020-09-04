@@ -25,10 +25,9 @@ class App extends Component {
           },
         })
           .then((res) => {
-            console.log(res.data)
-            // this.setState({
-            //   results: res.data
-            // });
+            this.setState({
+              results: res.data
+            });
           })
           .catch((err) => {
             console.log(err);
@@ -41,23 +40,20 @@ class App extends Component {
         this.setState({
           arrestType: value
         });
+        this.searchArrestType(this.state.arrestType)
+        this.setState({
+          arrestType: ''
+        });
       };
 
-      handleFormSubmit = event => {
-          event.preventDefault();
-          this.searchArrestType(this.state.arrestType)
-          this.setState({
-            arrestType: ''
-          });
-      }
 
     render() {
         return (
             <div>
                 <SearchForm
-                    // arrestType={this.state.arrestType}
-                    // handleFormSubmit={this.handleFormSubmit}
-                    // handleInputChange={this.handleInputChange}
+                    arrestType={this.state.arrestType}
+                    results={this.state.results} 
+                    handleInputChange={this.handleInputChange}
                     />
                 <ResultList 
                 // results={this.state.results}
