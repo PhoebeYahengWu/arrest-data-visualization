@@ -24,7 +24,7 @@ function SearchForm(props) {
           <option value="">Choose Arrest Type</option>
           {Object.keys(obj).map((ele, i) => (
             <option key={i + "-el"} value={ele}>
-              {ele}
+              {ele.toLowerCase()}
             </option>
           ))}
         </select>
