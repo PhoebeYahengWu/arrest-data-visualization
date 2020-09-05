@@ -55,7 +55,7 @@ function ResultList(props) {
   };
 
   return (
-    <div className="container mb-4">
+    <div className="container mb-2">
       <div className="row mt-3">
         <div className="col-md-6">
           <BarChart type="arrest_boro" />
