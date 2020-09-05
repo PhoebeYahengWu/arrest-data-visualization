@@ -59,15 +59,15 @@ class App extends Component {
                 results={this.state.results}
                 handleInputChange={this.handleInputChange}
               />
-              <p>The left bar chart is based on borough of arrest. B(Bronx), S(Staten Island), K(Brooklyn), M(Manhattan), Q(Queens)</p>
-              <p>The right bar chart is based on perpetrator’s age within a category</p>
+              <p>The first bar chart is based on borough of arrest. B(Bronx), S(Staten Island), K(Brooklyn), M(Manhattan), Q(Queens)</p>
+              <p>The second bar chart is based on perpetrator’s age within a category</p>
               <p>Data Source: <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Arrest-Data-Year-to-Date-/uip8-fykc" aria-label="NYCOpenData" title="NYCOpenData" target="_blank" rel="noopener noreferrer">NYC OpenData</a></p>
             </div>
             <div className="col-md-8">
               <MapBox results={this.state.filtered} />
             </div>
             <div className="col-12">
-              <ResultList results={this.state.filtered} />
+              <ResultList results={this.state.filtered} /> 
             </div>
           </div>
         </div>
