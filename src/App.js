@@ -45,15 +45,16 @@ class App extends Component {
   render() {
     return (
       <>
-        <nav className="navbar navbar-light bg-dark">
+        {/* <nav className="navbar navbar-light bg-dark">
           <span className="navbar-brand mb-0 h1 text-white">
             Visualization of every arrest in NYC by the NYPD during the current
             year
           </span>
-        </nav>
-        <div className="container-fluid">
-          <div className="row mt-4">
+        </nav> */}
+        <div className="container">
+          <div className="row mt-2">
             <div className="col-md-4">
+            <h5>Visualization of every arrest in NYC by the NYPD during the current year</h5>
               <SearchForm
                 results={this.state.results}
                 handleInputChange={this.handleInputChange}
