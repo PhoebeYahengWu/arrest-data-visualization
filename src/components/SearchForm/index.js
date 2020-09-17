@@ -12,8 +12,6 @@ function SearchForm(props) {
       }
     }
 
-    console.log(obj);
-
     return (
       <div className="input-group mb-3">
         <select
@@ -21,8 +19,8 @@ function SearchForm(props) {
           id="inputGroupSelect01"
           onChange={props.handleInputChange}
         >
-          <option value="">Choose Arrest Type</option>
-          {Object.keys(obj).map((ele, i) => (
+          <option value=""> Choose Arrest Type </option>
+          {Object.keys(obj).sort().map((ele, i) => (
             <option key={i + "-el"} value={ele}>
               {ele.toLowerCase()}
             </option>
@@ -32,7 +30,7 @@ function SearchForm(props) {
     );
   };
 
-  return <div>{selector()}</div>;
+  return <div> {selector()} </div>;
 }
 
 export default SearchForm;

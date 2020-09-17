@@ -36,7 +36,6 @@ class App extends Component {
 
   handleInputChange = (event) => {
     let value = event.target.value;
-    console.log(value);
     this.setState({
       filtered: this.state.results.filter((x) => x.ofns_desc === value),
     });
