@@ -13,10 +13,10 @@ var colorArray = [
 const BarChart = (props) => {
   const mappings = {
     B: "Bronx",
-    S: "Staten",
-    K: "No idea",
-    M: "Manhatten",
-    Q: "Queeens",
+    S: "Staten Island",
+    K: "Brooklyn",
+    M: "Manhattan",
+    Q: "Queens",
   };
   const obj = {};
 
@@ -32,7 +32,15 @@ const BarChart = (props) => {
           },
         },
       ],
-    },
+      yAxes: [{
+        ticks: {
+            beginAtZero: true,
+            min: 0,
+            stepSize: 1
+        },
+        stacked: true
+    }]
+    }
   };
 
   props.results.forEach((arrest) => {

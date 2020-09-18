@@ -58,8 +58,10 @@ class App extends Component {
                 results={this.state.results}
                 handleInputChange={this.handleInputChange}
               />
-              <p>The first bar chart is based on borough of arrest. B(Bronx), S(Staten Island), K(Brooklyn), M(Manhattan), Q(Queens)</p>
-              <p>The second bar chart is based on perpetrator’s age within a category</p>
+              <p>
+              NYC Arrest Data Visualization is a dashboard that displays every arrest by the NYPD during the current year. Users can select an arrest type from the drop-down list; the location of each arrest will then be displayed on the map with their arrest date. Meanwhile, the aggregate number of arrests in each borough will be displayed on one bar chart, with the number of arrestees in each age range displayed on another bar chart.
+              </p>
+         
               <p>Data Source: <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Arrest-Data-Year-to-Date-/uip8-fykc" aria-label="NYCOpenData" title="NYCOpenData" target="_blank" rel="noopener noreferrer">NYC OpenData</a></p>
             </div>
             <div className="col-md-8">

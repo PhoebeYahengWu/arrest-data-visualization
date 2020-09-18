@@ -27,7 +27,15 @@ function ResultList(props) {
             },
           },
         ],
-      },
+        yAxes: [{
+          ticks: {
+              beginAtZero: true,
+              min: 0,
+              stepSize: 1
+          },
+          stacked: true
+      }]
+      }
     };
 
     props.results.forEach((arrest) => {
@@ -45,6 +53,7 @@ function ResultList(props) {
     const eighteenUnder = entries.pop();
 
     entries.unshift([eighteenUnder]);
+    console.log(obj)
 
     return (
       <Bar
