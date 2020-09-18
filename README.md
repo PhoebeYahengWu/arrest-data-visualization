@@ -11,8 +11,6 @@ NYC Arrest Data Visualization is a dashboard that displays every arrest by the N
 
 * [link](#Link)
 
-* [Usage](#usage) 
-
 * [Questions](#Questions)
 
 ## TechUsed
@@ -20,9 +18,6 @@ React, Leaflet, JavaScript
 
 ## Link
 https://visualization-on-nyc-arrest-data.netlify.app/
-
-## Usage
-Just wait for while as it takes some time to load the data
 
 ## Questions
 ![user profile image](https://avatars0.githubusercontent.com/u/52837649?v=4)
