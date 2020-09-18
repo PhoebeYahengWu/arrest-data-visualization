@@ -44,16 +44,14 @@ class App extends Component {
   render() {
     return (
       <>
-        {/* <nav className="navbar navbar-light bg-dark">
-          <span className="navbar-brand mb-0 h1 text-white">
-            Visualization of every arrest in NYC by the NYPD during the current
-            year
+        <nav className="navbar navbar-light bg-dark">
+          <span className="navbar-brand mb-0 h1 text-white pt-1">
+          NYC Arrest Data Visualization
           </span>
-        </nav> */}
+        </nav> 
         <div className="container">
           <div className="row mt-2">
             <div className="col-md-4">
-            <h5>Visualization of every arrest in NYC by the NYPD during the current year</h5>
               <SearchForm
                 results={this.state.results}
                 handleInputChange={this.handleInputChange}
@@ -67,9 +65,12 @@ class App extends Component {
             <div className="col-md-8">
               <MapBox results={this.state.filtered} />
             </div>
-            <div className="col-12">
+
+       
+            <div className="col-md-12">
               <ResultList results={this.state.filtered} /> 
             </div>
+        
           </div>
         </div>
       </>

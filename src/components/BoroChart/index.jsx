@@ -24,6 +24,10 @@ const BarChart = (props) => {
     legend: {
       display: false,
     },
+    title: {
+      display: true,
+      text: 'Number of Arrest in Each Borough'
+   },
     scales: {
       xAxes: [
         {

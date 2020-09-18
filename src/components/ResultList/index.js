@@ -19,13 +19,17 @@ function ResultList(props) {
       legend: {
         display: false,
       },
+      title: {
+        display: true,
+        text: 'Number of Arrestees in Each Age Range'
+     },
       scales: {
         xAxes: [
           {
             gridLines: {
               display: false,
             },
-          },
+          }
         ],
         yAxes: [{
           ticks: {
@@ -48,31 +52,29 @@ function ResultList(props) {
         }
     });
 
-    const entries =
+    let entries =
       Object.entries(obj).sort((a, b) => (a[0] > b[0] ? 1 : -1)) || [];
-    const eighteenUnder = entries.pop();
+    // const eighteenUnder = entries.pop();
+    //  entries.unshift([[eighteenUnder][0]]);
+     return (
+        <Bar
+          data={{
+            labels: entries.map((x) => x[0]),
+            datasets: [
+              {
+                data: entries.map((x) => x[1]),
+                backgroundColor: colorArray, 
+              },
+            ],
+          }}
+          options={options} 
+        />
+      );
 
-    entries.unshift([eighteenUnder]);
-    console.log(obj)
-
-    return (
-      <Bar
-        data={{
-          labels: entries.map((x) => x[0]),
-          datasets: [
-            {
-              data: entries.map((x) => x[1]),
-              backgroundColor: colorArray,
-            },
-          ],
-        }}
-        options={options}
-      />
-    );
   };
 
   return (
-    <div className="container mb-2">
+    <div className="container-fluid mb-2">
       <div className="row mt-3">
         <div className="col-md-6">
           <BoroChart results={props.results} />{" "}
