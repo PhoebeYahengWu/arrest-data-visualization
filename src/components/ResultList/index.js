@@ -76,7 +76,7 @@ function ResultList(props) {
 
   return (
     <div className="container-fluid mb-2">
-      <div className="row mt-3">
+      <div className="row">
         <div className="col-md-6">
           <BoroChart results={props.results} />{" "}
         </div>{" "}

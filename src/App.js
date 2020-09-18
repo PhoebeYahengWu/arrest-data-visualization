@@ -57,7 +57,7 @@ class App extends Component {
                 handleInputChange={this.handleInputChange}
               />
               <div class="alert alert-danger" role="alert">
-                Number of Arrest: {this.state.filtered.length}
+                Number of Arrests: {this.state.filtered.length}
               </div>
               <p>
               NYC Arrest Data Visualization is a dashboard that displays every arrest by the NYPD during the current year. Users can select an arrest type from the drop-down list; the location of each arrest will then be displayed on the map with their arrest date. Meanwhile, the aggregate number of arrests in each borough will be displayed on one bar chart, with the number of arrestees in each age range displayed on another bar chart.
