@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# historic-arrest-data-visualization
-historic-arrest-data-visualization
-=======
 # NYC Arrest Data Visualization
 
 ![new](https://user-images.githubusercontent.com/52837649/93633434-f94d9300-f9bc-11ea-841e-56905a1d6665.gif)
@@ -27,6 +23,3 @@ https://visualization-on-nyc-arrest-data.netlify.app/
 ![user profile image](https://avatars0.githubusercontent.com/u/52837649?v=4)
 
 For questions about the project contact PhoebeYahengWu or directly at wuyaheng2016@gmail.com.
-
-
->>>>>>> 311e3937ae84f298c69a66d18a209bef4b8c1d9b
