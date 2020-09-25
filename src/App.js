@@ -91,7 +91,7 @@ class App extends Component {
         </nav>
         <div className="container-fluid">
           <div className="row mt-2">
-            <div className="col-md-4">
+            <div className="col-md-5">
             <h5 className="text-center">Choose Another Arrest Type</h5>
               <SearchForm
                 results={this.state.ofns_desc}
@@ -102,7 +102,13 @@ class App extends Component {
               </div>
 
               <p>
-              NYC Arrest Data Visualization is a dashboard that displays every arrest by the NYPD during the current year. Users can select an arrest type from the drop-down list; the location of each arrest will then be displayed on the map with their arrest date. Meanwhile, the aggregate number of arrests in each borough will be displayed on one bar chart, with the number of arrestees in each age range displayed on another bar chart. At the bottom, a line graph is used to show the number of arrests over time.
+              NYC Arrest Data Visualization is a dashboard that helps people to be more informed of the year to date arrest rates in New York City and increases transparency of NYPD actions and arrests.<br/><br/>
+
+              The dashboard displays a maximum of 1000 arrests per screen for the selected arrest type affected in NYC by the NYPD during the current year. The reason why I produced this dashboard is to know if COVID-19 has had any effect on the arrest rate in NYC. <br/><br/>
+              
+              Users can select an arrest type from the drop-down list; the location of each arrest will then be displayed on the map with their arrest date. Meanwhile, the aggregate number of arrests in each borough will be displayed on one bar chart, with the number of arrestees in each age range displayed on another bar chart.<br/><br/>
+
+              At the bottom, a line graph is used to show the number of arrests over time. By pressing the "prev" or "next" button, users are able to see a maximum of another 1000 arrests from the previous or next period.  
               </p>
 
               <p>
@@ -118,7 +124,7 @@ class App extends Component {
                 </a>
               </p>
             </div>
-            <div className="col-md-8">
+            <div className="col-md-7">
               <div className="card">
                 <MapBox results={this.state.filtered} />
               </div>
