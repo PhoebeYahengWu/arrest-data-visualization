@@ -26,7 +26,7 @@ export default (props) => {
       ).addTo(mymap);
 
       props.pins.forEach((pin) =>
-        L.marker([pin.latitude, pin.longitude]).addTo(mymap).bindPopup(pin.arrest_date.substring(0, 10)).openPopup()
+        L.marker([pin.latitude, pin.longitude]).addTo(mymap).bindTooltip(pin.arrest_date.substring(0, 10))
       );
 
     }
